@@ -91,5 +91,7 @@ struct TestRow: View {
 
 enum TestType {
     case short
-    case full
+    case man
+    case woman
+    case child
 }

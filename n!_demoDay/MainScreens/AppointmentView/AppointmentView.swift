@@ -6,9 +6,20 @@ struct AppointmentView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Text("Doctors")
-                    .bold()
-                    .font(.system(size: 30,weight: .bold))
+//                Text("Doctors")
+//                    .bold()
+//                    .font(.system(size: 30,weight: .bold))
+                HStack {
+//                    Image("doctor_suggesting")
+//                        .resizable()
+//                        .frame(width: 120, height: 120)
+//                        .scaledToFill()
+//                        .clipShape(Circle())
+                    VStack {
+                        Text("Если есть вопросы, рекомендую обратиться к моим коллегам")
+                    }
+                }
+
                 ScrollView {
                     LazyVGrid(columns: createGridItems(), spacing: 16) {
                         ForEach(viewModel.doctors) { doctor in
@@ -16,9 +27,9 @@ struct AppointmentView: View {
                         }
                     }
                     .padding()
-                }
-                .onAppear {
-                    viewModel.getDoctors()
+                    .onAppear {
+                        viewModel.getDoctors()
+                    }
                 }
             }
         }

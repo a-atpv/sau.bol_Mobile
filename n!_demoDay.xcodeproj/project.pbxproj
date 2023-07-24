@@ -16,7 +16,6 @@
 		B06153CF2A61A21B00C4ABAA /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06153CE2A61A21B00C4ABAA /* RecommendationView.swift */; };
 		B06A60232A5C086F00302DA3 /* n__demoDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A60222A5C086F00302DA3 /* n__demoDayApp.swift */; };
 		B06A60252A5C086F00302DA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A60242A5C086F00302DA3 /* ContentView.swift */; };
-		B06A60272A5C087000302DA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A60262A5C087000302DA3 /* Assets.xcassets */; };
 		B06A602A2A5C087000302DA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A60292A5C087000302DA3 /* Preview Assets.xcassets */; };
 		B06A60312A5C08FF00302DA3 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A60302A5C08FF00302DA3 /* LogInView.swift */; };
 		B06A60332A5C0A6900302DA3 /* LogInVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A60322A5C0A6900302DA3 /* LogInVIewModel.swift */; };
@@ -43,6 +42,8 @@
 		B0F21D082A6D979300C37B5A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F21D072A6D979300C37B5A /* AppState.swift */; };
 		B0F21D0A2A6D987D00C37B5A /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F21D092A6D987D00C37B5A /* RootView.swift */; };
 		B0F21D0C2A6DCBE700C37B5A /* SystemColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F21D0B2A6DCBE700C37B5A /* SystemColors.swift */; };
+		B0F21D0E2A6E603200C37B5A /* TestButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F21D0D2A6E603200C37B5A /* TestButtonView.swift */; };
+		B0F21D102A6E7EE000C37B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F21D0F2A6E7EE000C37B5A /* Assets.xcassets */; };
 		B0FB748E2A6970CC001FCCCC /* User .swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB748D2A6970CC001FCCCC /* User .swift */; };
 		B0FB74902A69731C001FCCCC /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB748F2A69731C001FCCCC /* UserInfoView.swift */; };
 /* End PBXBuildFile section */
@@ -57,7 +58,6 @@
 		B06A601F2A5C086F00302DA3 /* n!_demoDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "n!_demoDay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A60222A5C086F00302DA3 /* n__demoDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = n__demoDayApp.swift; sourceTree = "<group>"; };
 		B06A60242A5C086F00302DA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B06A60262A5C087000302DA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B06A60292A5C087000302DA3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B06A60302A5C08FF00302DA3 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		B06A60322A5C0A6900302DA3 /* LogInVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVIewModel.swift; sourceTree = "<group>"; };
@@ -83,6 +83,8 @@
 		B0F21D072A6D979300C37B5A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B0F21D092A6D987D00C37B5A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		B0F21D0B2A6DCBE700C37B5A /* SystemColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemColors.swift; sourceTree = "<group>"; };
+		B0F21D0D2A6E603200C37B5A /* TestButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButtonView.swift; sourceTree = "<group>"; };
+		B0F21D0F2A6E7EE000C37B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0FB748D2A6970CC001FCCCC /* User .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User .swift"; sourceTree = "<group>"; };
 		B0FB748F2A69731C001FCCCC /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,7 +135,6 @@
 				B06A60472A5C4A5B00302DA3 /* MainScreens */,
 				B0F21D012A6D189300C37B5A /* Models */,
 				B0F21D022A6D18E100C37B5A /* Helpers */,
-				B06A60262A5C087000302DA3 /* Assets.xcassets */,
 				B06A60282A5C087000302DA3 /* Preview Content */,
 			);
 			path = "n!_demoDay";
@@ -175,6 +176,7 @@
 			children = (
 				B06A603B2A5C48B900302DA3 /* MainView.swift */,
 				B0F21D052A6D54F300C37B5A /* TestConformationView.swift */,
+				B0F21D0D2A6E603200C37B5A /* TestButtonView.swift */,
 				B0E96BAA2A66973300A7F49B /* MainViewModel.swift */,
 				B0F21CFE2A6D182100C37B5A /* TestView */,
 			);
@@ -243,6 +245,7 @@
 				B0E96BAD2A66EF7200A7F49B /* Validator.swift */,
 				B0F21D072A6D979300C37B5A /* AppState.swift */,
 				B0F21D0B2A6DCBE700C37B5A /* SystemColors.swift */,
+				B0F21D0F2A6E7EE000C37B5A /* Assets.xcassets */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -313,8 +316,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F21D102A6E7EE000C37B5A /* Assets.xcassets in Resources */,
 				B06A602A2A5C087000302DA3 /* Preview Assets.xcassets in Resources */,
-				B06A60272A5C087000302DA3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +336,7 @@
 				B06A60372A5C0B0A00302DA3 /* MoyaManager.swift in Sources */,
 				B06153CF2A61A21B00C4ABAA /* RecommendationView.swift in Sources */,
 				B06153C92A6094FB00C4ABAA /* TestViewModel.swift in Sources */,
+				B0F21D0E2A6E603200C37B5A /* TestButtonView.swift in Sources */,
 				B06A60432A5C491400302DA3 /* AppointmentView.swift in Sources */,
 				B0F21CF72A6D063400C37B5A /* DoctorDetailsView.swift in Sources */,
 				B06A60452A5C494500302DA3 /* SettingsView.swift in Sources */,

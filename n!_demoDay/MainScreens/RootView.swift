@@ -1,25 +1,30 @@
 import SwiftUI
 
 struct RootView: View {
+    init() {
+        UITabBar.appearance().unselectedItemTintColor = .gray
+       }
     var body: some View {
         TabView {
             MainView()
                 .tabItem {
-                    Image(systemName: "1.circle")
-                    Text("View 1")
+                    Image(systemName: "calendar")
+                        .frame(width: 40, height: 40)
                 }
-                
+            
+            
             AppointmentView()
                 .tabItem {
-                    Image(systemName: "2.circle")
-                    Text("View 2")
+                    Image(systemName: "heart.text.square")
+                        .frame(width: 40, height: 40)
                 }
             SettingsView()
                 .tabItem {
-                    Image(systemName: "3.circle")
-                    Text("View 3")
+                    Image(systemName: "gearshape")
+                        .frame(width: 40, height: 40)
                 }
         }
+        .accentColor(.customBlue)
         .navigationBarBackButtonHidden()
     }
 }

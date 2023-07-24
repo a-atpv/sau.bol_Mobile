@@ -14,13 +14,11 @@ class MainViewModel: ObservableObject {
                     let decoder = JSONDecoder()
                     let habitModels = try decoder.decode(GetHabitResponse.self, from: response.data).habits
                     self.habits = habitModels.map { Habit(habit: $0) }
-                    
+                    print(self.habits)
                 } catch {
-
                     print("Decoding Error:", error)
                 }
             case let .failure(error):
-
                 print(error)
             }
         }

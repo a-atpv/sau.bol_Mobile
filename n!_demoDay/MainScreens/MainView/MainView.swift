@@ -26,8 +26,10 @@ struct MainView: View {
                 
                 HStack{
                     Button {
-                        viewModel.createHabit(habit: newHabit)
-                        newHabit = ""
+                        if newHabit.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+                            viewModel.createHabit(habit: newHabit)
+                            newHabit = ""
+                        }
                     } label: {
                         Text("+")
                             .font(.system(size: 24, weight: .bold))
@@ -47,14 +49,14 @@ struct MainView: View {
                                 Button(action: {
                                     viewModel.deleteHabit(habitId: habit.id)
                                 }, label: {
-                                    Label("Delete", systemImage: "trash")
+                                    Label("Удалить", systemImage: "trash")
                                 })
                                 .tint(.red)
                             }
                         }
                 }
                 .frame(height: 300)
-//                Spacer()
+                Spacer()
                 
                 
                 
@@ -63,8 +65,9 @@ struct MainView: View {
             .background(Color.white)
         }
         
-        .onAppear{
-            print(UserDefaults.standard.string(forKey: UserDefaultKeys.tokenKey) ?? "")
+        .onAppear {
+            print("MAIN VIEW ON APPEAR")
+//            print(UserDefaults.standard.string(forKey: UserDefaultKeys.tokenKey) ?? "")
             viewModel.getHabits()
         }
         .padding(.horizontal)

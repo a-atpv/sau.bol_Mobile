@@ -11,7 +11,9 @@ class TestViewModel: ObservableObject {
         var endpoint: API.APIEndpoint {
             switch testType {
             case .short: return API.APIEndpoint.getShortTest
-            case .full: return API.APIEndpoint.getShortTest
+            case .man: return API.APIEndpoint.getShortTest
+            case .woman: return API.APIEndpoint.getShortTest
+            case .child: return API.APIEndpoint.getShortTest
             }
         }
         provider.request(endpoint) { result in

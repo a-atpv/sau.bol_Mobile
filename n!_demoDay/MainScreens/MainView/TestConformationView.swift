@@ -3,36 +3,52 @@ import SwiftUI
 struct TestConformationView: View {
     var body: some View {
         VStack {
+            Text("Тесты помогут определить ваше общее состояние, ваши возможные проблемы со здововьем. На основе ответов будут даны рекомендации по анализам, которые стоит сдать и привычками для внедрения в повседневную жизнь")
             HStack {
-                Image("doctor_explaining")
-                    .resizable()
-                    .frame(width: 150, height: 150)
-                    .scaledToFill()
-                    .clipShape(Circle())
+//                Image("doctor_explaining")
+//                    .resizable()
+//                    .frame(width: 100, height: 100)
+//                    .scaledToFill()
+//                    .clipShape(Circle())
                 Text("Выберите тест для прохождения")
-                    .font(.system(size: 20,weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
             }
-            Text("короткий тест займет 1 минуту, подробные тесты 3 минуты ")
-            shortTestButton
-            fullTestButton
+//            Spacer()
+            
+            
+            VStack {
+                HStack {
+                    manTestButton
+                    childTestButton
+                }
+                HStack {
+                    shortTestButton
+                    womanTestButton
+                }
+            }
+            Text("Короткий тест займет 1 минуту, подробные тесты 3 минуты ")
         }
     }
     
     var shortTestButton: some View {
         NavigationLink(destination: TestView(type: .short)) {
-            TestButton(text: "короткий тест")
+            TestButtonView(type: .short)
         }
     }
     
-    var fullTestButton: some View {
-        NavigationLink(destination: TestView(type: .full)) {
-            TestButton(text: "полный тест")
+    var manTestButton: some View {
+        NavigationLink(destination: TestView(type: .man)) {
+            TestButtonView(type: .man)
         }
     }
-}
-
-struct TestConformationView_Previews: PreviewProvider {
-    static var previews: some View {
-        TestConformationView()
+    var womanTestButton: some View {
+        NavigationLink(destination: TestView(type: .woman)) {
+            TestButtonView(type: .woman)
+        }
+    }
+    var childTestButton: some View {
+        NavigationLink(destination: TestView(type: .child)) {
+            TestButtonView(type: .child)
+        }
     }
 }

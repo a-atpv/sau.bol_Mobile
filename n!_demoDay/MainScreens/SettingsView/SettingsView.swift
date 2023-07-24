@@ -29,13 +29,21 @@ struct SettingsView: View {
                     }
                 }
                 .navigationBarTitle("Settings")
-                
+                .listStyle(.plain)
+                .background(Color.white)
                 Button {
                     viewModel.logout()
                     appState.logout()
                 } label: {
-                    Text("Log out")
-                        .foregroundColor(.red)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .foregroundColor(.red)
+                            .frame(width: 280, height: 40)
+                        Text("Выйти")
+                            .foregroundColor(.white)
+                            .font(.system(size: 14, weight: .bold))
+                    }
+                    .padding()
                 }
 //                .navigationDestination(isPresented: $didLogOut) {
 //                    WelcomeScreen()

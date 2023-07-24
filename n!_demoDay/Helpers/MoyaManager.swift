@@ -18,7 +18,6 @@ class API {
 }
 
 extension API.APIEndpoint: TargetType {
-    static let token = UserDefaults.standard.string(forKey: UserDefaultKeys.tokenKey)!
     var baseURL: URL {
         return URL(string: "https://sau-bol.onrender.com")!
     }
@@ -106,7 +105,7 @@ extension API.APIEndpoint: TargetType {
             return nil
             
         case .getAcc, .getShortTest, .getRecommendations, .getHabits, .deleteHabit, .createHabit, .getDoctors:
-            return ["Content-Type": "application/json", "Authorization": API.APIEndpoint.token]
+            return ["Content-Type": "application/json", "Authorization": UserDefaults.standard.string(forKey: UserDefaultKeys.tokenKey) ?? ""]
             
         }
     }
