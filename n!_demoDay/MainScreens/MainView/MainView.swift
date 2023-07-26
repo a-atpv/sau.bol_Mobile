@@ -25,6 +25,9 @@ struct MainView: View {
                 }
                 
                 HStack{
+                    TextField(text: $newHabit, prompt: Text("Добавить привычку")) {
+                        Text("Добавить привычку")
+                    }
                     Button {
                         if newHabit.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
                             viewModel.createHabit(habit: newHabit)
@@ -34,9 +37,6 @@ struct MainView: View {
                         Text("+")
                             .font(.system(size: 24, weight: .bold))
                             .foregroundColor(.black)
-                    }
-                    TextField(text: $newHabit, prompt: Text("Добавить привычку")) {
-                        Text("Добавить привычку")
                     }
                 }
                 .padding(.horizontal)
@@ -63,7 +63,9 @@ struct MainView: View {
             }
             .listStyle(.plain)
             .background(Color.white)
+            .navigationTitle("")
         }
+        .tint(Color.customBlue)
         
         .onAppear {
             print("MAIN VIEW ON APPEAR")

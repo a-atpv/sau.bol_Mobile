@@ -29,22 +29,22 @@ struct TestButtonView: View {
     var text: String {
         switch type {
         case .short:
-            return "пройти короткий тест"
+            return "короткий тест"
         case .man:
-            return "пройти тест для мужчин"
+            return "тест для мужчин"
         case .woman:
-            return "пройти тест для женщин"
+            return "тест для женщин"
         case .child:
-            return "пройти тест для детей"
+            return "тест для детей"
         }
     }
     
     var width: CGFloat {
         switch type {
         case .short, .child:
-            return 140
+            return 120
         case .man, .woman:
-            return 190
+            return 210
         }
     }
     var body: some View {
@@ -54,25 +54,29 @@ struct TestButtonView: View {
                 .foregroundColor(color)
                 
             
-            HStack {
-                Image(image)
-                    .resizable()
-                    .clipShape(RoundedRectangle(cornerRadius: 16)) // Clip the image to the rounded rectangle shape
-                    .frame(width: width * 0.6, height: 130)
-                    .clipped()
-                    .opacity(0.6)
+//            HStack {
+//                Image(image)
+//                    .resizable()
+//                    .clipShape(RoundedRectangle(cornerRadius: 16)) // Clip the image to the rounded rectangle shape
+//                    .frame(width: width * 0.6, height: 130)
+//                    .clipped()
+//                    .opacity(0.6)
+//                Spacer()
+//            }
+//            .padding()
+            VStack {
+                Text(text)
+                    .font(.system(size: 18, weight: .semibold))
+                    .frame(width: width , height: 60)
+                    .foregroundColor(.black)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
                 Spacer()
             }
-            .padding()
-            
-            Text(text)
-                .frame(width: width , height: 60)
-                .foregroundColor(.black)
-                .lineLimit(2)
             
         }
         .frame(width: width, height: 140)
-//        .padding()
+        .padding(4)
     }
 }
 

@@ -3,7 +3,16 @@ import SwiftUI
 struct TestConformationView: View {
     var body: some View {
         VStack {
-            Text("Тесты помогут определить ваше общее состояние, ваши возможные проблемы со здововьем. На основе ответов будут даны рекомендации по анализам, которые стоит сдать и привычками для внедрения в повседневную жизнь")
+            HStack(alignment: .top) {
+                Image("doctor_explaining")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .scaledToFill()
+                    .clipShape(Circle())
+                
+                Text("**Пройдите** тест чтобы получить рекомендации по возможным проблемам с вашим здоровьем")
+            }
+//            Spacer()
             HStack {
 //                Image("doctor_explaining")
 //                    .resizable()
@@ -26,6 +35,8 @@ struct TestConformationView: View {
                     womanTestButton
                 }
             }
+          
+            Spacer()
             Text("Короткий тест займет 1 минуту, подробные тесты 3 минуты ")
         }
     }
@@ -33,22 +44,30 @@ struct TestConformationView: View {
     var shortTestButton: some View {
         NavigationLink(destination: TestView(type: .short)) {
             TestButtonView(type: .short)
+                .navigationTitle("")
+                .tint(Color.customBlue)
         }
     }
     
     var manTestButton: some View {
         NavigationLink(destination: TestView(type: .man)) {
             TestButtonView(type: .man)
+                .navigationTitle("")
+                .tint(Color.customBlue)
         }
     }
     var womanTestButton: some View {
         NavigationLink(destination: TestView(type: .woman)) {
             TestButtonView(type: .woman)
+                .navigationTitle("")
+                .tint(Color.customBlue)
         }
     }
     var childTestButton: some View {
         NavigationLink(destination: TestView(type: .child)) {
             TestButtonView(type: .child)
+                .navigationTitle("")
+                .tint(Color.customBlue)
         }
     }
 }

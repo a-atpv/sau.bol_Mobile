@@ -19,7 +19,7 @@ struct SignInView: View {
                 repeatPasswordTextField
                 alertView
                 Spacer()
-                CustomButton(text: "Sign In") {
+                CustomButton(text: "Зарегистрироваться") {
                     alertText = validator.validation(mail: mail, password: password, repeatPassword: repeatPassword)
                     if alertText.isEmpty {
                         viewModel.registerUser(mail: mail, password: password) { response in

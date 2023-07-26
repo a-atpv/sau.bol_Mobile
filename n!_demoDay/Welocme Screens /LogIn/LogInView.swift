@@ -13,7 +13,7 @@ struct LogInView: View {
                 mailTextField
                 passwordTextField
                 Spacer()
-                CustomButton(text: "Log In") {
+                CustomButton(text: "Войти") {
                     viewModel.authorizeUser(mail: mail, password: password, completion: { response in
                         if response.0{
                             appState.login()
@@ -30,6 +30,7 @@ struct LogInView: View {
 //            }
             .padding()
         }
+        
         
     }
     

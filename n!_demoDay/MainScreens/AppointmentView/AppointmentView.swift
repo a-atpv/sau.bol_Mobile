@@ -6,20 +6,14 @@ struct AppointmentView: View {
     var body: some View {
         NavigationView {
             VStack{
-//                Text("Doctors")
-//                    .bold()
-//                    .font(.system(size: 30,weight: .bold))
                 HStack {
-//                    Image("doctor_suggesting")
-//                        .resizable()
-//                        .frame(width: 120, height: 120)
-//                        .scaledToFill()
-//                        .clipShape(Circle())
-                    VStack {
-                        Text("Если есть вопросы, рекомендую обратиться к моим коллегам")
-                    }
-                }
-
+                    Text("Выберите врача для консультации")
+                        .font(.system(size: 30,weight: .bold))
+                    Spacer()
+                }.padding(.horizontal)
+                
+                
+                
                 ScrollView {
                     LazyVGrid(columns: createGridItems(), spacing: 16) {
                         ForEach(viewModel.doctors) { doctor in
@@ -33,6 +27,7 @@ struct AppointmentView: View {
                 }
             }
         }
+        .toolbar(.visible, for: .tabBar)
     }
     
     private func createGridItems() -> [GridItem] {
@@ -54,38 +49,43 @@ struct DoctorView: View {
                 AsyncImage(url: URL(string: doctor.image)!) { image in
                     image
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 160, height: 200)
+//                        .aspectRatio(contentMode: .t)
                         .cornerRadius(12)
-                        .frame(width: 120, height: 220)
                 } placeholder: {
                     ProgressView()
                 }
                 
-                VStack() {
+                VStack {
                     Spacer()
                     ZStack{
                         RoundedRectangle(cornerRadius: 12)
-                            .frame(width: 120, height: 80)
-                            .foregroundColor(.customBlue)
-                            .opacity(0.3)
-                        VStack{
+                            .frame(width: 160, height: 70)
+                            .foregroundColor(.white)
+                            .opacity(0.5)
+                        VStack(alignment: .leading){
+                            
                             Text(doctor.name)
-                                .font(.headline)
-                                .foregroundColor(.white)
+                                .font(.system(size: 16, weight: .semibold))
+                                .foregroundColor(.black)
                                 .multilineTextAlignment(.leading)
                             
-    //                        Text(doctor.price)
-    //                            .font(.subheadline)
-    //                            .foregroundColor(.white)
-    //                            .multilineTextAlignment(.leading)
-                            
+                            Text("от " + doctor.price)
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
                         }
-    //                    .padding()
+                        .padding(2)
+                        
                     }
                 }
-                .frame(width: 120, height: 220)
             }
         }
+        .frame(width: 160, height: 200)
+        .padding(4)
+       
+        
+        
     }
     
     func buttonTapped() {
@@ -102,8 +102,3 @@ struct DoctorView_Previews: PreviewProvider {
 }
 
 
-//struct AppointmentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AppointmentView()
-//    }
-//}

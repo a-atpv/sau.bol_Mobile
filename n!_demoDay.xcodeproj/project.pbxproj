@@ -25,6 +25,7 @@
 		B06A60412A5C48EC00302DA3 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A60402A5C48EB00302DA3 /* TestView.swift */; };
 		B06A60432A5C491400302DA3 /* AppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A60422A5C491400302DA3 /* AppointmentView.swift */; };
 		B06A60452A5C494500302DA3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A60442A5C494500302DA3 /* SettingsView.swift */; };
+		B092998B2A7104C20030601B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092998A2A7104C20030601B /* View.swift */; };
 		B0E96BA52A65E29A00A7F49B /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E96BA42A65E29A00A7F49B /* AccountSettingsView.swift */; };
 		B0E96BA72A65E2B200A7F49B /* HabitSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E96BA62A65E2B200A7F49B /* HabitSettingsView.swift */; };
 		B0E96BA92A65E30D00A7F49B /* TestHistorySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E96BA82A65E30D00A7F49B /* TestHistorySettingsView.swift */; };
@@ -66,6 +67,7 @@
 		B06A60402A5C48EB00302DA3 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		B06A60422A5C491400302DA3 /* AppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentView.swift; sourceTree = "<group>"; };
 		B06A60442A5C494500302DA3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B092998A2A7104C20030601B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		B0E96BA42A65E29A00A7F49B /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		B0E96BA62A65E2B200A7F49B /* HabitSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSettingsView.swift; sourceTree = "<group>"; };
 		B0E96BA82A65E30D00A7F49B /* TestHistorySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHistorySettingsView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B06A60212A5C086F00302DA3 /* n!_demoDay */,
+				B0F21D0F2A6E7EE000C37B5A /* Assets.xcassets */,
 				B06A60202A5C086F00302DA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -245,7 +248,7 @@
 				B0E96BAD2A66EF7200A7F49B /* Validator.swift */,
 				B0F21D072A6D979300C37B5A /* AppState.swift */,
 				B0F21D0B2A6DCBE700C37B5A /* SystemColors.swift */,
-				B0F21D0F2A6E7EE000C37B5A /* Assets.xcassets */,
+				B092998A2A7104C20030601B /* View.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				B0F21D042A6D4CD800C37B5A /* UserDefaults.swift in Sources */,
 				B06A60332A5C0A6900302DA3 /* LogInVIewModel.swift in Sources */,
 				B0F21CF92A6D166600C37B5A /* DoctorModel.swift in Sources */,
+				B092998B2A7104C20030601B /* View.swift in Sources */,
 				B0F21CFD2A6D16C500C37B5A /* RecommendationModel.swift in Sources */,
 				B0F21D062A6D54F300C37B5A /* TestConformationView.swift in Sources */,
 				B0F21D0A2A6D987D00C37B5A /* RootView.swift in Sources */,
@@ -488,16 +492,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"n!_demoDay/Preview Content\"";
 				DEVELOPMENT_TEAM = 6ZB4DDC86D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = sau.bol;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -518,16 +524,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"n!_demoDay/Preview Content\"";
 				DEVELOPMENT_TEAM = 6ZB4DDC86D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = sau.bol;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (

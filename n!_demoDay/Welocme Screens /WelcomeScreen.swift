@@ -5,21 +5,24 @@ struct WelcomeScreen: View {
         NavigationStack{
             VStack {
                 NavigationLink(destination: LogInView()) {
-                    TestButton(text: "login")
+                    TestButton(text: "Войти")
                         .navigationBarBackButtonHidden()
                 }
                 
                 NavigationLink(destination: SignInView()) {
-                    TestButton(text: "signin")
+                    TestButton(text: "Зарегистрироваться")
                         .navigationBarBackButtonHidden()
                 }
             }
             
-        }.onAppear{
+        }
+        .background(Color.customBlue)
+        .onAppear{
             print(UserDefaults.standard.string(forKey: UserDefaultKeys.tokenKey) ?? "")
         }
         
     }
+
 }
 
 struct WelcomeScreen_Previews: PreviewProvider {

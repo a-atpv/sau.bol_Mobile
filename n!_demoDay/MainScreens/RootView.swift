@@ -3,6 +3,9 @@ import SwiftUI
 struct RootView: View {
     init() {
         UITabBar.appearance().unselectedItemTintColor = .gray
+        UINavigationBar.appearance().backIndicatorImage = UIImage(systemName: "arrow.backward")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+        
        }
     var body: some View {
         TabView {

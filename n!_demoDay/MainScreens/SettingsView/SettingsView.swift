@@ -6,29 +6,31 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             VStack{
+                Text("Настройки")
+                    .font(.system(size: 30,weight: .bold))
                 List {
                     NavigationLink(destination: AccountSettingsView()) {
                         HStack {
-                            Text("Account")
+                            Text("Аккаунт")
                             Spacer()
                         }
                     }
                     
                     NavigationLink(destination: TestHistorySettingsView()) {
                         HStack {
-                            Text("Test History")
+                            Text("История тестов")
                             Spacer()
                         }
                     }
                     
                     NavigationLink(destination: HabitSettingsView()) {
                         HStack {
-                            Text("Habits")
+                            Text("Привычки")
                             Spacer()
                         }
                     }
                 }
-                .navigationBarTitle("Settings")
+                .navigationBarBackButtonHidden()
                 .listStyle(.plain)
                 .background(Color.white)
                 Button {
@@ -36,12 +38,16 @@ struct SettingsView: View {
                     appState.logout()
                 } label: {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 12)
+                        RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(.red)
-                            .frame(width: 280, height: 40)
+                            .opacity(0.8)
+                            .frame(width: 330 , height: 60)
+                        
                         Text("Выйти")
+                            .bold()
                             .foregroundColor(.white)
-                            .font(.system(size: 14, weight: .bold))
+                            .frame(width: 330 , height: 60)
+                            
                     }
                     .padding()
                 }
