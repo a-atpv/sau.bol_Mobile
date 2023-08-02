@@ -7,15 +7,14 @@ struct TestView: View {
     @State var isDataArrived = false
     
     var body: some View {
-        NavigationStack{
+        NavigationView{
             VStack {
                 Text("Отметьте симптомы с которыми вы сталкиваетесь")
                     .font(.system(size: 24, weight: .semibold))
-                    .padding(.bottom, 10)
-                    List {
-                        ForEach(viewModel.tests, id: \.self) { test in
-                            TestRow(test: test, meanings: $viewModel.meanings)
-                        }
+                List {
+                    ForEach(viewModel.tests, id: \.self) { test in
+                        TestRow(test: test, meanings: $viewModel.meanings)
+                    }
                         Button(action: {
                             sendData()
                         }) {
@@ -26,18 +25,22 @@ struct TestView: View {
                                 .cornerRadius(10)
                         }
                     }
+                
 
                 Spacer()
             }
+            .padding(12)
             .onAppear {
                 viewModel.getTests(testType: type)
             }
-            .sheet(isPresented: $isDataArrived) {
+            .fullScreenCover(isPresented: $isDataArrived) {
                 RecommendationView(viewModel: viewModel)
+
             }
             .listStyle(.plain)
             .background(Color.white)
         }
+        .navigationTitle("")
     }
     
     func sendData() {
@@ -85,7 +88,7 @@ struct TestRow: View {
                 meanings[test.question] = test.meaning
             }
         }
-        .frame(height: 50)
+        .frame(height: 120)
     }
 }
 

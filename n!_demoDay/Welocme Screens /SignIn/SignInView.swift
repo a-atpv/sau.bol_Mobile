@@ -32,10 +32,6 @@ struct SignInView: View {
                     }
                 }
             }
-//            .navigationDestination(isPresented: $isAuthenticated) {
-//                nextView
-//            }
-            .padding()
         }
     }
     

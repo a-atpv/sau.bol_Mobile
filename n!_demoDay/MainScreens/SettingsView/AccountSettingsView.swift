@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct AccountSettingsView: View {
+    @StateObject var viewModel: SettingsViewModel
+    @EnvironmentObject var appState: AppState
     @State private var name: String = ""
     @State private var surname: String = ""
     @State private var age: String = ""
@@ -40,14 +42,34 @@ struct AccountSettingsView: View {
                     .foregroundColor(.blue)
             }
             .padding(.top, 20)
+            Spacer()
+            Button {
+                viewModel.deleteUser()
+                appState.logout()
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.red)
+                        .opacity(0.8)
+                        .frame(width: 330 , height: 60)
+                    
+                    Text("Удалить аккаунт")
+                        .bold()
+                        .foregroundColor(.white)
+                        .frame(width: 330 , height: 60)
+                        
+                }
+                .padding()
+            }
         }
         .padding()
-        .navigationBarTitle("Account Settings")
+        .navigationBarTitle("")
+        .navigationBarBackButtonTitleHidden()
     }
 }
 
-struct AccountSettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AccountSettingsView()
-    }
-}
+//struct AccountSettingsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AccountSettingsView()
+//    }
+//}

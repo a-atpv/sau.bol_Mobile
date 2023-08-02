@@ -47,6 +47,20 @@ struct TestButtonView: View {
             return 210
         }
     }
+    var emoji: String {
+        switch type {
+        case .short:
+            return "⏱️"
+        case .man:
+            return "👨"
+        case .woman:
+            return "👩"
+        case .child:
+            return "👶"
+        }
+    }
+    
+    
     var body: some View {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 16)
@@ -64,16 +78,25 @@ struct TestButtonView: View {
 //                Spacer()
 //            }
 //            .padding()
-            VStack {
+            VStack (alignment: .leading){
+                HStack {
+                    Text(emoji)
+                        .font(.system(size: 60))
+                        .frame(width: 60, height: 10)
+                        .padding()
+                        .padding(.top)
+                    Spacer()
+                }
                 Text(text)
-                    .font(.system(size: 18, weight: .semibold))
-                    .frame(width: width , height: 60)
+                    .font(.system(size: 18, weight: .regular))
+                    .frame(width: width-10 , height: 60)
                     .foregroundColor(.black)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
+//                    .padding()
                 Spacer()
             }
-            
+            .frame(width: width, height: 140)
         }
         .frame(width: width, height: 140)
         .padding(4)

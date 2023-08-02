@@ -18,6 +18,7 @@ struct AppointmentView: View {
                     LazyVGrid(columns: createGridItems(), spacing: 16) {
                         ForEach(viewModel.doctors) { doctor in
                             DoctorView(doctor: doctor)
+                                .navigationTitle("")
                         }
                     }
                     .padding()
@@ -25,6 +26,7 @@ struct AppointmentView: View {
                         viewModel.getDoctors()
                     }
                 }
+                .tint(Color.customBlue)
             }
         }
         .toolbar(.visible, for: .tabBar)
@@ -50,7 +52,7 @@ struct DoctorView: View {
                     image
                         .resizable()
                         .frame(width: 160, height: 200)
-//                        .aspectRatio(contentMode: .t)
+                        .scaledToFill()
                         .cornerRadius(12)
                 } placeholder: {
                     ProgressView()
@@ -66,7 +68,7 @@ struct DoctorView: View {
                         VStack(alignment: .leading){
                             
                             Text(doctor.name)
-                                .font(.system(size: 16, weight: .semibold))
+                                .font(.system(size: 14, weight: .semibold))
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.leading)
                             
@@ -74,8 +76,14 @@ struct DoctorView: View {
                                 .font(.system(size: 12, weight: .medium))
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.leading)
+                            
+                            Text(doctor.title)
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
                         }
                         .padding(2)
+                        
                         
                     }
                 }
@@ -95,10 +103,10 @@ struct DoctorView: View {
 }
 
 
-struct DoctorView_Previews: PreviewProvider {
-    static var previews: some View {
-        DoctorView(doctor: Doctor(id: "", image: "https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-at-camera-in-the-office_1301-7807.jpg?w=2000", name: "Askarova Daniya", title: "", price: "", info: "", number: ""))
-    }
-}
+//struct DoctorView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DoctorView(doctor: Doctor(id: "", image: "https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-at-camera-in-the-office_1301-7807.jpg?w=2000", name: "Askarova Daniya", title: "", price: "", info: "", number: ""))
+//    }
+//}
 
 

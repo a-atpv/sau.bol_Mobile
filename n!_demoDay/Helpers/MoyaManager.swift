@@ -14,6 +14,9 @@ class API {
         case createHabit(habit: String)
         case deleteHabit(habit_id: String)
         case getDoctors
+        case resetPassword(email: String, password: String, token: String)
+        case sendTempPassword(email: String)
+        case deleteUser
     }
 }
 
@@ -42,6 +45,12 @@ extension API.APIEndpoint: TargetType {
             return "habits/delete"
         case .getDoctors:
             return "doctors/all"
+        case .resetPassword:
+            return "auth/reset-password"
+        case .sendTempPassword:
+            return "auth/password-reset-token"
+        case .deleteUser:
+            return "auth/user-delete"
         }
     }
 
@@ -65,6 +74,12 @@ extension API.APIEndpoint: TargetType {
             return .post
         case .getDoctors:
             return .get
+        case .resetPassword:
+            return .post
+        case .sendTempPassword:
+            return .post
+        case .deleteUser:
+            return .post
         }
     }
 
@@ -74,7 +89,7 @@ extension API.APIEndpoint: TargetType {
 
     var task: Task {
         switch self {
-        case .getShortTest, .getAcc, .getHabits, .getDoctors:
+        case .getShortTest, .getAcc, .getHabits, .getDoctors, .deleteUser:
             return .requestPlain
             
         case let .authorizeUser(mail, password):
@@ -96,15 +111,23 @@ extension API.APIEndpoint: TargetType {
         case let .registerUser(mail: mail, password: password):
             let parameters: [String: Any] = ["email": mail, "password": password]
             return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
+        case let .resetPassword(email: email, password: password, token: token):
+            let parameters: [String: Any] = ["email": email, "password": password, "token": token]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
+        case let .sendTempPassword(email: email):
+            let parameters: [String: Any] = ["email": email]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         }
     }
 
     var headers: [String: String]? {
         switch self {
-        case .authorizeUser, .registerUser:
+        case .authorizeUser, .registerUser, .resetPassword, .sendTempPassword:
             return nil
             
-        case .getAcc, .getShortTest, .getRecommendations, .getHabits, .deleteHabit, .createHabit, .getDoctors:
+        case .getAcc, .getShortTest, .getRecommendations, .getHabits, .deleteHabit, .createHabit, .getDoctors, .deleteUser:
             return ["Content-Type": "application/json", "Authorization": UserDefaults.standard.string(forKey: UserDefaultKeys.tokenKey) ?? ""]
             
         }

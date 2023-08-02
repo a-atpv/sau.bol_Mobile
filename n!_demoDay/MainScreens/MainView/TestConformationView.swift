@@ -2,43 +2,48 @@ import SwiftUI
 
 struct TestConformationView: View {
     var body: some View {
-        VStack {
-            HStack(alignment: .top) {
-                Image("doctor_explaining")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .scaledToFill()
-                    .clipShape(Circle())
-                
-                Text("**Пройдите** тест чтобы получить рекомендации по возможным проблемам с вашим здоровьем")
-            }
-//            Spacer()
-            HStack {
-//                Image("doctor_explaining")
-//                    .resizable()
-//                    .frame(width: 100, height: 100)
-//                    .scaledToFill()
-//                    .clipShape(Circle())
-                Text("Выберите тест для прохождения")
-                    .font(.system(size: 20, weight: .bold))
-            }
-//            Spacer()
-            
-            
+        NavigationView{
             VStack {
-                HStack {
-                    manTestButton
-                    childTestButton
+                HStack(alignment: .top) {
+                    Image("doctor_explaining")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .scaledToFill()
+                        .clipShape(Circle())
+                    
+                    Text("**Пройдите** тест чтобы получить рекомендации по возможным проблемам с вашим здоровьем")
                 }
+        //            Spacer()
                 HStack {
-                    shortTestButton
-                    womanTestButton
+        //                Image("doctor_explaining")
+        //                    .resizable()
+        //                    .frame(width: 100, height: 100)
+        //                    .scaledToFill()
+        //                    .clipShape(Circle())
+                    Text("Выберите тест для прохождения")
+                        .font(.system(size: 20, weight: .bold))
                 }
+        //            Spacer()
+                
+                VStack {
+                    HStack {
+                        manTestButton
+                        childTestButton
+                    }
+                    HStack {
+                        shortTestButton
+                        womanTestButton
+                    }
+                }
+              
+                Spacer()
+                Text("Короткий тест займет 1 минуту, подробные тесты 3 минуты ")
+                Spacer()
             }
-          
-            Spacer()
-            Text("Короткий тест займет 1 минуту, подробные тесты 3 минуты ")
         }
+//        .navigationTitle("Выбор теста")
+        .navigationTitle("")
+
     }
     
     var shortTestButton: some View {

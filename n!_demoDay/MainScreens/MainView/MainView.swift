@@ -7,83 +7,90 @@ struct MainView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading){
-                Text("Привет! Сегодня вы молодец")
-                    .font(.system(size: 30,weight: .bold))
-//                Text("Давай сегодня станем здоровее чем вчера")
-//                    .font(.system(size: 14,weight: .light))
-                HStack {
-                    Image("doctor_avatar")
-                        .resizable()
-                        .frame(width: 120, height: 120)
-                        .scaledToFill()
-                        .clipShape(Circle())
-                    VStack {
-                        Text("Проверим твое самочувствие?")
-                        passTestButton
-                    }
-                }
-                
-                HStack{
-                    TextField(text: $newHabit, prompt: Text("Добавить привычку")) {
-                        Text("Добавить привычку")
-                    }
-                    Button {
-                        if newHabit.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
-                            viewModel.createHabit(habit: newHabit)
-                            newHabit = ""
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Text("Привет! Сегодня вы молодец")
+                        .font(.system(size: 30,weight: .bold))
+                    
+                    HStack {
+                        Image("doctor_avatar")
+                            .resizable()
+                            .frame(width: 120, height: 120)
+                            .scaledToFill()
+                            .clipShape(Circle())
+                        VStack {
+                            Text("Проверим твое самочувствие?")
+                            passTestButton
                         }
-                    } label: {
-                        Text("+")
-                            .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(.black)
                     }
-                }
-                .padding(.horizontal)
-                .padding(.top)
+                    
+                    HStack {
+                        TextField("Добавить привычку", text: $newHabit, onEditingChanged: { _ in }, onCommit: {
+                            createHabit()
+                        })
+                        Button {
+                            createHabit()
+                        } label: {
+                            Text("+")
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.top)
+                    
+                    List(viewModel.habits) { habit in
+                        HabitView(habit: habit)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            
+                                    Button(action: {
+                                        viewModel.deleteHabit(habitId: habit.id)
+                                    }, label: {
+                                        Image(systemName: "trash")
+                                            .frame(width: 50, height: 50)
+                                    })
+                                    .tint(.red)
                 
-                List(viewModel.habits){ habit in
-                    HabitView(habit: habit)
-                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                            HStack{
-                                Button(action: {
-                                    viewModel.deleteHabit(habitId: habit.id)
-                                }, label: {
-                                    Label("Удалить", systemImage: "trash")
-                                })
-                                .tint(.red)
                             }
-                        }
+                    }
+                    .frame(height: 300)
                 }
-                .frame(height: 300)
-                Spacer()
-                
-                
-                
+                .listStyle(.plain)
+                .background(Color.white)
+                .padding(.horizontal)
             }
-            .listStyle(.plain)
-            .background(Color.white)
             .navigationTitle("")
+            .onTapGesture {
+                hideKeyboard()
+            }
+            .onAppear {
+                print("MAIN VIEW ON APPEAR")
+                viewModel.getHabits()
+            }
+            
         }
         .tint(Color.customBlue)
-        
-        .onAppear {
-            print("MAIN VIEW ON APPEAR")
-//            print(UserDefaults.standard.string(forKey: UserDefaultKeys.tokenKey) ?? "")
-            viewModel.getHabits()
-        }
-        .padding(.horizontal)
     }
+    
     var passTestButton: some View {
         NavigationLink(destination: TestConformationView()) {
             TestButton(text: "пройти тест")
         }
+        
     }
-
+    
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    private func createHabit() {
+        if newHabit.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+            viewModel.createHabit(habit: newHabit)
+            newHabit = ""
+            hideKeyboard()
+        }
+    }
 }
-
-
-
 struct HabitView: View {
     @State var habit: Habit
     
@@ -135,24 +142,3 @@ struct TestButton: View{
         }
     }
 }
-
-struct Habit: Identifiable {
-    var id: String
-    var text: String
-    var done: Bool
-    var achievedDates = [String]()
-    
-    init(text: String, done: Bool = false) {
-        self.text = text
-        self.done = done
-        self.id = UUID().uuidString
-    }
-    
-    init(habit: HabitModel) {
-        self.id = habit.id
-        self.text = habit.description
-        self.done = false
-        self.achievedDates = habit.achievedDates
-    }
-}
-

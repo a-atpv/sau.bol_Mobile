@@ -26,6 +26,11 @@
 		B06A60432A5C491400302DA3 /* AppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A60422A5C491400302DA3 /* AppointmentView.swift */; };
 		B06A60452A5C494500302DA3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A60442A5C494500302DA3 /* SettingsView.swift */; };
 		B092998B2A7104C20030601B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092998A2A7104C20030601B /* View.swift */; };
+		B092998D2A71C10F0030601B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092998C2A71C10F0030601B /* ForgotPasswordView.swift */; };
+		B092998F2A7701CB0030601B /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092998E2A7701CB0030601B /* Habit.swift */; };
+		B09299912A78C06E0030601B /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09299902A78C06E0030601B /* ExpandableView.swift */; };
+		B09299932A79B5190030601B /* AppInfoSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09299922A79B5190030601B /* AppInfoSettingsView.swift */; };
+		B0AFBE6E2A7A26C400376A1D /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AFBE6D2A7A26C400376A1D /* ForgotPasswordViewModel.swift */; };
 		B0E96BA52A65E29A00A7F49B /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E96BA42A65E29A00A7F49B /* AccountSettingsView.swift */; };
 		B0E96BA72A65E2B200A7F49B /* HabitSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E96BA62A65E2B200A7F49B /* HabitSettingsView.swift */; };
 		B0E96BA92A65E30D00A7F49B /* TestHistorySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E96BA82A65E30D00A7F49B /* TestHistorySettingsView.swift */; };
@@ -68,6 +73,11 @@
 		B06A60422A5C491400302DA3 /* AppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentView.swift; sourceTree = "<group>"; };
 		B06A60442A5C494500302DA3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B092998A2A7104C20030601B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		B092998C2A71C10F0030601B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		B092998E2A7701CB0030601B /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		B09299902A78C06E0030601B /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
+		B09299922A79B5190030601B /* AppInfoSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoSettingsView.swift; sourceTree = "<group>"; };
+		B0AFBE6D2A7A26C400376A1D /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		B0E96BA42A65E29A00A7F49B /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		B0E96BA62A65E2B200A7F49B /* HabitSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSettingsView.swift; sourceTree = "<group>"; };
 		B0E96BA82A65E30D00A7F49B /* TestHistorySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHistorySettingsView.swift; sourceTree = "<group>"; };
@@ -108,7 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				B06A60302A5C08FF00302DA3 /* LogInView.swift */,
+				B092998C2A71C10F0030601B /* ForgotPasswordView.swift */,
 				B06A60322A5C0A6900302DA3 /* LogInVIewModel.swift */,
+				B0AFBE6D2A7A26C400376A1D /* ForgotPasswordViewModel.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -193,6 +205,7 @@
 				B0E96BA82A65E30D00A7F49B /* TestHistorySettingsView.swift */,
 				B0E96BA42A65E29A00A7F49B /* AccountSettingsView.swift */,
 				B0E96BA62A65E2B200A7F49B /* HabitSettingsView.swift */,
+				B09299922A79B5190030601B /* AppInfoSettingsView.swift */,
 				B0E96BB32A674FDF00A7F49B /* SettingsViewModel.swift */,
 			);
 			path = SettingsView;
@@ -213,6 +226,7 @@
 				B06A60402A5C48EB00302DA3 /* TestView.swift */,
 				B06153C82A6094FB00C4ABAA /* TestViewModel.swift */,
 				B06153CE2A61A21B00C4ABAA /* RecommendationView.swift */,
+				B09299902A78C06E0030601B /* ExpandableView.swift */,
 			);
 			path = TestView;
 			sourceTree = "<group>";
@@ -236,6 +250,7 @@
 				B0F21CF82A6D166600C37B5A /* DoctorModel.swift */,
 				B06153CA2A609B0F00C4ABAA /* Advice.swift */,
 				B0F21D032A6D4CD800C37B5A /* UserDefaults.swift */,
+				B092998E2A7701CB0030601B /* Habit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -339,11 +354,13 @@
 				B06A60372A5C0B0A00302DA3 /* MoyaManager.swift in Sources */,
 				B06153CF2A61A21B00C4ABAA /* RecommendationView.swift in Sources */,
 				B06153C92A6094FB00C4ABAA /* TestViewModel.swift in Sources */,
+				B0AFBE6E2A7A26C400376A1D /* ForgotPasswordViewModel.swift in Sources */,
 				B0F21D0E2A6E603200C37B5A /* TestButtonView.swift in Sources */,
 				B06A60432A5C491400302DA3 /* AppointmentView.swift in Sources */,
 				B0F21CF72A6D063400C37B5A /* DoctorDetailsView.swift in Sources */,
 				B06A60452A5C494500302DA3 /* SettingsView.swift in Sources */,
 				B0F21D082A6D979300C37B5A /* AppState.swift in Sources */,
+				B09299932A79B5190030601B /* AppInfoSettingsView.swift in Sources */,
 				B06A603C2A5C48B900302DA3 /* MainView.swift in Sources */,
 				B0E96BB02A67042400A7F49B /* SignInViewModel.swift in Sources */,
 				B06A60252A5C086F00302DA3 /* ContentView.swift in Sources */,
@@ -355,7 +372,10 @@
 				B0E96BAE2A66EF7200A7F49B /* Validator.swift in Sources */,
 				B06A60312A5C08FF00302DA3 /* LogInView.swift in Sources */,
 				B0E96BAB2A66973300A7F49B /* MainViewModel.swift in Sources */,
+				B092998D2A71C10F0030601B /* ForgotPasswordView.swift in Sources */,
 				B0E96BA52A65E29A00A7F49B /* AccountSettingsView.swift in Sources */,
+				B09299912A78C06E0030601B /* ExpandableView.swift in Sources */,
+				B092998F2A7701CB0030601B /* Habit.swift in Sources */,
 				B0E96BA92A65E30D00A7F49B /* TestHistorySettingsView.swift in Sources */,
 				B06153BC2A5DFC4100C4ABAA /* SignInView.swift in Sources */,
 				B0F21D0C2A6DCBE700C37B5A /* SystemColors.swift in Sources */,
@@ -493,10 +513,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"n!_demoDay/Preview Content\"";
-				DEVELOPMENT_TEAM = 6ZB4DDC86D;
+				DEVELOPMENT_TEAM = UD7GN29598;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = sau.bol;
@@ -504,18 +525,22 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = light;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "aldiyar.dev.n--demoDay";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aldiyaraitpayev.saubol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -525,10 +550,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"n!_demoDay/Preview Content\"";
-				DEVELOPMENT_TEAM = 6ZB4DDC86D;
+				DEVELOPMENT_TEAM = UD7GN29598;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = sau.bol;
@@ -536,18 +562,22 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = light;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "aldiyar.dev.n--demoDay";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aldiyaraitpayev.saubol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

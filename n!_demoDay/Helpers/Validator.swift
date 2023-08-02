@@ -16,10 +16,10 @@ class Validator {
         if mail.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password.trimmingCharacters(in: .whitespacesAndNewlines) == "" || repeatPassword.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return "Fill all forms!"
         }
-        if isValidEmail(mail) == false {
+        if !isValidEmail(mail){
             return "Enter valid mail adress!"
         }
-        if isPasswordValid(password) == false {
+        if !isPasswordValid(password) {
             return "Your password is not strong enough!"
         }
         if password != repeatPassword {
@@ -28,12 +28,12 @@ class Validator {
         return ""
     }
     
-    private func isPasswordValid(_ password : String) -> Bool {
+    func isPasswordValid(_ password : String) -> Bool {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
     
-    private func isValidEmail(_ mail :String) -> Bool {
+    func isValidEmail(_ mail :String) -> Bool {
         let mailTest = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
         return mailTest.evaluate(with: mail)
 

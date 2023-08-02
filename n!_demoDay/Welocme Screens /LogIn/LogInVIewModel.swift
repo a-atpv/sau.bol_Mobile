@@ -1,6 +1,6 @@
 import Foundation
 
-class LogInViewModel {
+class LogInViewModel: ObservableObject {
     private let provider = API.provider
     
     func authorizeUser(mail: String, password: String, completion: @escaping ((Bool, String)) -> ()) {

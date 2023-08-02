@@ -6,26 +6,33 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Text("Настройки")
+                Text("Аккаунт")
                     .font(.system(size: 30,weight: .bold))
                 List {
-                    NavigationLink(destination: AccountSettingsView()) {
+                    NavigationLink(destination: AccountSettingsView(viewModel: viewModel)) {
                         HStack {
-                            Text("Аккаунт")
+                            Text("Моя информация")
                             Spacer()
                         }
                     }
                     
-                    NavigationLink(destination: TestHistorySettingsView()) {
-                        HStack {
-                            Text("История тестов")
-                            Spacer()
-                        }
-                    }
+//                    NavigationLink(destination: TestHistorySettingsView()) {
+//                        HStack {
+//                            Text("История тестов")
+//                            Spacer()
+//                        }
+//                    }
+//
+//                    NavigationLink(destination: HabitSettingsView()) {
+//                        HStack {
+//                            Text("Привычки")
+//                            Spacer()
+//                        }
+//                    }
                     
-                    NavigationLink(destination: HabitSettingsView()) {
+                    NavigationLink(destination: AppInfoSettingsView()) {
                         HStack {
-                            Text("Привычки")
+                            Text("О приложении")
                             Spacer()
                         }
                     }
