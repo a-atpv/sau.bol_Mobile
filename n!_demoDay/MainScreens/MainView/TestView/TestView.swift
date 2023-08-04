@@ -81,12 +81,12 @@ struct TestRow: View {
                 }
             }
             .contentShape(Circle())
-            .onTapGesture {
-                withAnimation {
-                    self.isSelected.toggle()
-                }
-                meanings[test.question] = test.meaning
+        }
+        .onTapGesture {
+            withAnimation {
+                self.isSelected.toggle()
             }
+            meanings[test.question] = test.meaning
         }
         .frame(height: 120)
     }

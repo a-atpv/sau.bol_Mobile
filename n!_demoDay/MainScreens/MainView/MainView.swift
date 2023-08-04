@@ -27,9 +27,11 @@ struct MainView: View {
                     HStack {
                         TextField("Добавить привычку", text: $newHabit, onEditingChanged: { _ in }, onCommit: {
                             createHabit()
+                            newHabit = ""
                         })
                         Button {
                             createHabit()
+                            
                         } label: {
                             Text("+")
                                 .font(.system(size: 24, weight: .bold))
@@ -41,16 +43,15 @@ struct MainView: View {
                     
                     List(viewModel.habits) { habit in
                         HabitView(habit: habit)
-                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                            
-                                    Button(action: {
-                                        viewModel.deleteHabit(habitId: habit.id)
-                                    }, label: {
-                                        Image(systemName: "trash")
-                                            .frame(width: 50, height: 50)
-                                    })
-                                    .tint(.red)
-                
+                            .swipeActions(edge: .trailing) {
+                                Button(action: {
+                                    viewModel.deleteHabit(habitId: habit.id)
+                                    print("Deleting")
+                                }, label: {
+                                    Image(systemName: "trash")
+                                        .frame(width: 50, height: 50)
+                                })
+                                .tint(.red)
                             }
                     }
                     .frame(height: 300)
@@ -60,9 +61,6 @@ struct MainView: View {
                 .padding(.horizontal)
             }
             .navigationTitle("")
-            .onTapGesture {
-                hideKeyboard()
-            }
             .onAppear {
                 print("MAIN VIEW ON APPEAR")
                 viewModel.getHabits()
